@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sender-Imom</title>
+  <link rel="icon" href="./img/email-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <h1 class="bg-primary text-white text-center py-2">Sender - Imom</h1>
+  </header>
+  <section class="bg-light row px-4">
+    <div class="col-lg-4 col-md-4 col-sm-12 px-md-3 px-5 p-3">
+      <form action="" class="" autocomplete="off">
+        <div class="form-group">
+          <label for="txt_email_address_sender">Email address sender</label>
+          <input type="email" class="form-control" id="txt_email_address_sender" aria-describedby="email address sender"
+            placeholder="Enter an email address">
+          <small class="form-text text-muted">This email address will send all email.</small>
+        </div>
+        <br>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#emails_address_receivers_modal">Show emails address receivers</button>
+        </div>
+        <br>
+      </form>
+      <div class="row small_line_spacing">
+        <p>Copy and page the keys for send multiple emails:</p>
+        <p>Name receiver:</p>
+        <p><strong>[[text-enterprise-name-receiver]]</strong></p>
+        <p>Email receiver:</p>
+        <p><strong>[[text-enterprise-email-receiver]]</strong></p>
+        <p>Address receiver:</p>
+        <p><strong>[[text-enterprise-address-receiver]]</strong></p>
+        <p>Name receiver:</p>
+        <p><strong>[[text-name-receiver]]</strong></p>
+      </div>
+    </div>
+  </div>
+    <div class="col-lg-8 col-md-8 col-sm-12 px-5 p-3">
+      <form action="" class="" autocomplete="off">
+        <div class="mb-3 form-group">
+          <label for="message_body" class="form-label">Message body:</label>
+          <textarea class="form-control" id="message_body" rows="5" aria-describedby="message body"
+            placeholder="Enter a message"></textarea>
+        </div>
+      </form>
+    </div>
+  </section>
+  <div class="modal fade" id="emails_address_receivers_modal" tabindex="-1"
+    aria-labelledby="emails address receivers window" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Emails address receivers</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Email address</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ivan@gamil.com</td>
+                <td>Ivan</td>
+                <td><a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-dismiss="modal"
+                  data-bs-target="#edit_data_receiver_modal">Edit</a></td>
+                <td><a type="button" class="btn btn-danger text-white">Delete</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="edit_data_receiver_modal" aria-hidden="true" aria-labelledby="edit_data_receiver_modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit data receiver</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" class="" autocomplete="off">
+            <input type="number" hidden id="txt_edit_id_receiver">
+            <div class="form-group">
+              <label for="txt_edit_receiver">Receiver (optional)</label>
+              <input type="text" class="form-control" id="txt_edit_receiver" aria-describedby="edit receiver"
+                placeholder="Enter receiver">
+            </div>
+            <div class="form-group">
+              <label for="txt_edit_email_address">Email address *</label>
+              <input type="email" class="form-control" id="txt_edit_email_address" aria-describedby="email address"
+                placeholder="Enter email address">
+            </div>
+            <div class="form-group">
+              <label for="txt_edit_enterprise">Enterprise *</label>
+              <input type="text" class="form-control" id="txt_edit_enterprise" aria-describedby="edit enterprise"
+                placeholder="Enter enterprise">
+            </div>
+            <div class="form-group">
+              <label for="txt_edit_address">Address *</label>
+              <input type="text" class="form-control" id="txt_edit_address" aria-describedby="edit address"
+                placeholder="Enter address">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-dismiss="modal"
+          data-bs-target="#emails_address_receivers_modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal"
+          data-bs-target="#emails_address_receivers_modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
